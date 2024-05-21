@@ -24,7 +24,7 @@ export default function HeroSection() {
                 <Link href="/" target='_blank' className="mt-5">
                     <Button size="sm" variant="outline" className="flex gap-1 text-blue-600 hover:text-blue-600 hover:bg-blue-100">Join Discord<ArrowRight className='w-4 h-4' /></Button>
                 </Link>
-                <Link href="/" target='_blank' className='animate-buttonheartbeat border p-2 rounded-full mt-5 hover:dark:bg-black hover:cursor-pointer'>
+                <Link href="https://github.com/suman-3/Next-TechSatck" target='_blank' className='animate-buttonheartbeat border p-2 rounded-full mt-5 hover:dark:bg-black hover:cursor-pointer'>
                     <Github className='w-4 h-4' />
                 </Link>
             </div>
