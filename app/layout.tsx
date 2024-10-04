@@ -9,9 +9,9 @@ import './globals.css'
 
 
 export const metadata: Metadata = {
-  title: 'LS2 Outlet',
-  description: 'Oficial', 
-  icons:"/logo.png",
+  title: 'Outlet',
+  description: 'Pré Black Friday', 
+  icons:"/logo2.png",
 }
 
 export default function RootLayout({
