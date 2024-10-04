@@ -36,17 +36,13 @@ const Form: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (emailValido) {
-      window.location.href = 'https://pre-blackfriday.linhasuper2.com';
+      window.location.href = 'https://outletls2.com';
     }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#300808] bg-opacity-90">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#300808] bg-opacity-[85%]">
       <form onSubmit={handleSubmit} className="bg-[#FF0000] p-8 rounded shadow-md">
-        {/* Logo no centro */}
-        <div className="flex justify-center mb-4">
-          <img src="/LS2.png" alt="Logo" className="h-20 w-auto" />
-        </div>
         {/* Título */}
         <h2 className="text-white text-center font-semibold text-2xl mb-4">
           Até 70% OFF e Frete Grátis

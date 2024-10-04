@@ -42,7 +42,7 @@ const Banner: React.FC<BannerProps> = ({ desktopImageUrl, mobileImageUrl }) => {
         <img
           src={desktopImageUrl}
           alt="Banner Desktop"
-          className="w-full h-auto object-cover mb-52"
+          className="w-full h-auto object-cover mb-52 filter blur-[5px]" // Adicionado blur aqui
         />
       </div>
       {/* Banner para Smartphones */}
@@ -50,7 +50,7 @@ const Banner: React.FC<BannerProps> = ({ desktopImageUrl, mobileImageUrl }) => {
         <img
           src={mobileImageUrl}
           alt="Banner Mobile"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover filter blur-[5px]" // Adicionado blur aqui
         />
       </div>
     </div>
