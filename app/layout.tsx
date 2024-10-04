@@ -9,9 +9,9 @@ import './globals.css'
 
 
 export const metadata: Metadata = {
-  title: 'Nextjs 14 Tech Stack',
-  description: 'Build your next SAAS product',
-  icons:"/logo.svg",
+  title: 'LS2 Outlet',
+  description: 'Oficial', 
+  icons:"/logo.png",
 }
 
 export default function RootLayout({
@@ -20,7 +20,6 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body className={GeistSans.className}>
           <Provider>
@@ -37,6 +36,5 @@ export default function RootLayout({
           <Analytics />
         </body>
       </html>
-    </ClerkProvider>
   )
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 import { ArrowRight, Github } from 'lucide-react';
 import Link from "next/link";
@@ -12,10 +13,10 @@ export default function HeroSection() {
                 <AnimatedGradientTextComponent />
             </div>
             <h1 className="scroll-m-20 text-4xl sm:text-4xl md:text-6xl font-semibold tracking-tight lg:text-7xl text-center max-w-[1120px] bg-gradient-to-b from-black to-gray-700/80 dark:from-white dark:to-slate-400 inline-block text-transparent bg-clip-text">
-                Build & Ship Fast with the Ultimate Nextjs Starter Kit
+                Uma linha completa de segurança
             </h1>
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-lg text-center mt-2 dark:text-gray-400">
-                Everything you need to quickly build your SaaS, AI product, or any other web application fast giving you time to focus on what really matters
+                Eleve o nível de proteção e elegância nas duas aventuras de duas rodas.
             </p>
             <div className="flex justify-center items-center gap-3">
                 <Link href="/dashboard" className="mt-5">
@@ -32,12 +33,12 @@ export default function HeroSection() {
                 <div className="relative flex max-w-6xl justify-center overflow-hidden mt-7">
                     <div className="relative rounded-xl">
                         <img
-                            src="/dash-light.png"
+                            src="/banner.png"
                             alt="Hero Image"
                             className="block w-[1200px] rounded-[inherit] border object-contain shadow-lg dark:hidden"
                         />
                         <img
-                            src="/dash.png"
+                            src="/banner.png"
                             alt="Hero Image"
                             className="dark:block w-[1200px] rounded-[inherit] border object-contain shadow-lg hidden"
                         />

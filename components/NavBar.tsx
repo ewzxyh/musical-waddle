@@ -8,7 +8,6 @@ import {
     NavigationMenuTrigger
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
-import { useAuth } from "@clerk/nextjs"
 import { Dialog, DialogClose } from "@radix-ui/react-dialog"
 import { BlocksIcon } from "lucide-react"
 import Link from 'next/link'
@@ -42,8 +41,6 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export function NavBar() {
-    const { userId } = useAuth();
-
     return (
         <div className="flex min-w-full justify-between p-2 border-b z-10 dark:bg-black bg-white">
             <div className="flex justify-between w-full min-[825px]:hidden">
@@ -111,7 +108,6 @@ export function NavBar() {
                         <p className="pl-1">Dashboard</p>
                     </Button>
                 </Link>
-                {userId && <Profile />}
                 <ModeToggle />
             </div>
         </div>

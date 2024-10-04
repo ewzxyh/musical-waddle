@@ -27,9 +27,11 @@ export default function Footer() {
                         <div className="mt-8 space-y-4 lg:mt-0">
 
                             <div>
-                                <h2 className="text-2xl font-medium">Sign Up To Our Newsletter</h2>
+                                <h2 className="text-2xl font-medium">
+                                    Inscreva-se na nossa promoção de Pré Black Friday
+                                </h2>
                                 <p className="mt-4 max-w-lg  ">
-                                    Want the best SEO educational content from nerds who have fun building and learning in the SEO space? If the answer is yes, sign up.
+                                    Receba novidades e promoções por e-mail e seja avisado em primeira mão!
                                 </p>
                             </div>
                             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col border rounded-xl p-4 gap-3 mt-6 w-full">
@@ -39,7 +41,7 @@ export default function Footer() {
                                     type="email"
                                 />
                                 <Button type="submit">
-                                    Sign Up
+                                    Enviar
                                 </Button>
                             </form>
                         </div>
@@ -51,11 +53,11 @@ export default function Footer() {
                         <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2">
 
                             <div>
-                                <p className="font-medium ">Socials</p>
+                                <p className="font-medium ">Redes sociais</p>
 
                                 <ul className="mt-6 space-y-4 text-sm">
                                     <li>
-                                        <a href="/" target="_blank" className="transition hover:opacity-75"> Twitter </a>
+                                        <a href="/" target="_blank" className="transition hover:opacity-75"> Facebook </a>
                                     </li>
                                     <li>
                                         <a href="/" target="_blank" className="  transition hover:opacity-75"> Instagram</a>
@@ -64,14 +66,23 @@ export default function Footer() {
                             </div>
 
                             <div>
-                                <p className="font-medium ">Helpful Links</p>
+                                <p className="font-medium ">Categorias</p>
 
                                 <ul className="mt-6 space-y-4 text-sm">
                                     <li>
-                                        <a target="_blank" href="/" rel="noopener noreferrer" className="  transition hover:opacity-75"> Docs </a>
+                                        <a target="_blank" href="/" rel="noopener noreferrer" className="  transition hover:opacity-75"> On Road </a>
                                     </li>
                                     <li>
-                                        <a href="/" className="  transition hover:opacity-75"> Methodology </a>
+                                        <a href="/" className="  transition hover:opacity-75"> Off Road </a>
+                                    </li>
+                                    <li>
+                                        <a href="/" className="  transition hover:opacity-75"> Vestuário </a>
+                                    </li>
+                                    <li>
+                                        <a href="/" className="  transition hover:opacity-75"> Acessórios </a>
+                                    </li>
+                                    <li>
+                                        <a href="/" className="  transition hover:opacity-75"> Outlet </a>
                                     </li>
                                 </ul>
                             </div>
@@ -80,15 +91,15 @@ export default function Footer() {
                         <div className="mt-8 border-t   pt-8">
                             <ul className="flex flex-wrap gap-4 text-xs">
                                 <li>
-                                    <a href="/" target="_blank" className="transition hover:opacity-75">Terms & Conditions </a>
+                                    <a href="/" target="_blank" className="transition hover:opacity-75">Termos e condições </a>
                                 </li>
 
                                 <li>
-                                    <a href="/" target="_blank" className="transition hover:opacity-75">Privacy Policy </a>
+                                    <a href="/" target="_blank" className="transition hover:opacity-75">Política de privacidade </a>
                                 </li>
                             </ul>
 
-                            <p className="mt-8 text-xs  ">&copy; 2024. Web Mastery . All rights reserved.</p>
+                            <p className="mt-8 text-xs  ">&copy; 2024. Todos os Direitos Reservados.</p>
                         </div>
                     </div>
                 </div>
