@@ -57,10 +57,10 @@ export default function Footer() {
 
                                 <ul className="mt-6 space-y-4 text-sm">
                                     <li>
-                                        <a href="/" target="_blank" className="transition hover:opacity-75"> Facebook </a>
+                                        <a href="facebook.com" target="_blank" className="transition hover:opacity-75"> Facebook </a>
                                     </li>
                                     <li>
-                                        <a href="/" target="_blank" className="  transition hover:opacity-75"> Instagram</a>
+                                        <a href="instagram.com" target="_blank" className="  transition hover:opacity-75"> Instagram</a>
                                     </li>
                                 </ul>
                             </div>
@@ -70,19 +70,19 @@ export default function Footer() {
 
                                 <ul className="mt-6 space-y-4 text-sm">
                                     <li>
-                                        <a target="_blank" href="/" rel="noopener noreferrer" className="  transition hover:opacity-75"> On Road </a>
+                                        <a target="_blank" href="/1" rel="noopener noreferrer" className="  transition hover:opacity-75"> On Road </a>
                                     </li>
                                     <li>
-                                        <a href="/" className="  transition hover:opacity-75"> Off Road </a>
+                                        <a href="/2" className="  transition hover:opacity-75"> Off Road </a>
                                     </li>
                                     <li>
-                                        <a href="/" className="  transition hover:opacity-75"> Vestuário </a>
+                                        <a href="/3" className="  transition hover:opacity-75"> Vestuário </a>
                                     </li>
                                     <li>
-                                        <a href="/" className="  transition hover:opacity-75"> Acessórios </a>
+                                        <a href="/4" className="  transition hover:opacity-75"> Acessórios </a>
                                     </li>
                                     <li>
-                                        <a href="/" className="  transition hover:opacity-75"> Outlet </a>
+                                        <a href="/5" className="  transition hover:opacity-75"> Outlet </a>
                                     </li>
                                 </ul>
                             </div>

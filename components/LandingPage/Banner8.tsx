@@ -46,7 +46,7 @@ const Banner: React.FC<BannerProps> = ({ desktopImageUrl, mobileImageUrl }) => {
         />
       </div>
       {/* Banner para Smartphones */}
-      <div className="block md:hidden inset-0 z-40">
+      <div className="block md:hidden inset-0 z-40 mt-[-18em]">
         <img
           src={mobileImageUrl}
           alt="Banner Mobile"

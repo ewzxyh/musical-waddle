@@ -1,7 +1,6 @@
 import Provider from '@/app/provider'
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
-import { ClerkProvider } from '@clerk/nextjs'
 import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans';

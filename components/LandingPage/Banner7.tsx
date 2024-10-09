@@ -36,7 +36,7 @@ const Banner: React.FC<BannerProps> = ({ desktopImageUrl, mobileImageUrl }) => {
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-full mt-[-86em]">
       {/* Banner para Desktop e Notebook */}
       <div className="hidden md:block">
         <img
@@ -46,11 +46,11 @@ const Banner: React.FC<BannerProps> = ({ desktopImageUrl, mobileImageUrl }) => {
         />
       </div>
       {/* Banner para Smartphones */}
-      <div className="block md:hidden inset-0 z-40">
+      <div className="block md:hidden inset-0 z-40 mt-[-86em]">
         <img
           src={mobileImageUrl}
           alt="Banner Mobile"
-          className="w-full h-full   filter blur-[5px]" // Adicionado blur aqui
+          className="w-full h-full filter blur-[5px]" // Adicionado blur aqui
         />
       </div>
     </div>

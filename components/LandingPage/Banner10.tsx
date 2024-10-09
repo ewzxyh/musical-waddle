@@ -50,7 +50,7 @@ const Banner: React.FC<BannerProps> = ({ desktopImageUrl, mobileImageUrl }) => {
         <img
           src={mobileImageUrl}
           alt="Banner Mobile"
-          className="w-full h-full   filter blur-[5px]" // Adicionado blur aqui
+          className="w-full h-full blur-[5px]" // Adicionado blur aqui
         />
       </div>
     </div>
