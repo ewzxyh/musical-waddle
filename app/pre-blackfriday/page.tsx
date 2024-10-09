@@ -88,7 +88,7 @@ export default function PreBlackFridayPage() {
         {`
     ga('create', 'AW-16733205759', 'auto');
     ga('require', 'linker');
-    ga('linker:autoLink', ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com', 'outletls2.com']);
+    ga('linker:autoLink', ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com']);
   `}
       </Script>
 
