@@ -23,7 +23,7 @@ const Form: React.FC = () => {
     if (!isModalVisible) {
       timer = setTimeout(() => {
         setIsModalVisible(true);
-      }, 1000); // 5 segundos
+      }, 300000); // 5 minutos em milissegundos
     }
 
     // Limpa o timer ao desmontar o componente ou quando a visibilidade mudar
@@ -48,12 +48,19 @@ const Form: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (emailValido) {
-      window.location.href = 'http://pre-blackfriday.linhasuper2.com';
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('get', 'AW-16733205759', 'linker_param', (linkerParam: string) => {
+          const redirectUrl = 'https://pre-blackfriday.linhasuper2.com?' + linkerParam;
+          window.location.href = redirectUrl;
+        });
+      } else {
+        // Fallback if gtag is not available
+        window.location.href = 'https://pre-blackfriday.linhasuper2.com';
+      }
     } else {
       // Tratar o caso em que o e-mail não é válido
       alert('Por favor, insira um e-mail válido.');
     }
-
   };
 
   return (
@@ -86,42 +93,44 @@ const Form: React.FC = () => {
             onChange={handleChange}
             required
             className="
-            mb-4 w-full
-            bg-white
-            hover:bg-gray-100
-            placeholder-gray-500
-            focus:outline-none focus:ring-0
-            text-black
-            border border-gray-300
-            rounded
-            py-2 px-3
-          "
+                mb-4 w-full
+                bg-white
+                hover:bg-gray-100
+                placeholder-gray-500
+                focus:outline-none focus:ring-0
+                text-black
+                border border-gray-300
+                rounded
+                py-2 px-3
+              "
           />
-          {/* Mensagem de erro */}
+          {/* Mensagem de orientação */}
           {!emailValido && (
-            <p className="text-white text-base mb-4 text-center">Entre na FILA e Visite nossa nova página</p>
+            <p className="text-white text-base mb-4 text-center">
+              Entre na FILA e visite nossa nova página
+            </p>
           )}
           {/* Botão enviar */}
           <Button
             type="submit"
             disabled={!emailValido}
             className="
-            w-full
-            bg-[#000]
-            hover:bg-[#3f0000]
-            disabled:bg-gray-400
-            text-base
-            text-white
-            font-semibold
-            py-2 px-4
-            rounded
-            focus:outline-none focus:ring-0"
+                w-full
+                bg-[#000]
+                hover:bg-[#3f0000]
+                disabled:bg-gray-400
+                text-base
+                text-white
+                font-semibold
+                py-2 px-4
+                rounded
+                focus:outline-none focus:ring-0"
           >
             Participar da Pré Black Friday
           </Button>
           {/* Aviso */}
           <p className="text-white text-center text-sm mt-4">
-            Promoção válida até 20/10 ou<br></br>enquanto durarem os estoques.
+            Promoção válida até 20/10 ou<br />enquanto durarem os estoques.
           </p>
         </form>
       </div>

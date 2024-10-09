@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import dynamic from 'next/dynamic';
 import PageWrapper from "@/components/Container/PageWrapper";
 const Form = dynamic(() => import('@/components/LandingPage/Form'), { ssr: false });
@@ -19,11 +19,11 @@ import Card from '@/components/LandingPage/Button';
 
 export default function Home() {
   useEffect(() => {
-    const handleContextMenu = (e: { preventDefault: () => void; }) => {
+    const handleContextMenu = (e: { preventDefault: () => void }) => {
       e.preventDefault();
     };
 
-    const handleKeyDown = (e: { ctrlKey: any; key: string; preventDefault: () => void; }) => {
+    const handleKeyDown = (e: { ctrlKey: any; key: string; preventDefault: () => void }) => {
       if (e.ctrlKey && (e.key === 'c' || e.key === 's' || e.key === 'u')) {
         e.preventDefault();
       }
@@ -49,11 +49,12 @@ export default function Home() {
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
-           gtag('set', 'linker', {
-          'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com']
-          });
           gtag('js', new Date());
-          gtag('config', 'AW-16733205759');
+          gtag('config', 'AW-16733205759', {
+            'linker': {
+              'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com']
+            }
+          });
         `}
       </Script>
       <Form />
