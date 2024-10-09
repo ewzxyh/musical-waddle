@@ -26,8 +26,7 @@ export default function PreBlackFridayPage() {
       if (typeof window !== 'undefined' && window.ga) {
         const trackers = window.ga.getAll();
         if (trackers && trackers.length > 0) {
-          const linkerParam = trackers[0].get('linkerParam');
-          const redirectUrl = 'https://outletls2.com' + (linkerParam ? '?' + linkerParam : '');
+          const redirectUrl = 'https://outletls2.com';
           window.location.href = redirectUrl;
         } else {
           // Fallback if no trackers are available

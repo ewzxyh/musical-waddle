@@ -31,9 +31,7 @@ export default function Home() {
       if (typeof window !== 'undefined' && window.ga) {
         const trackers = window.ga.getAll();
         if (trackers && trackers.length > 0) {
-          const linkerParam = trackers[0].get('linkerParam');
-          console.log('Linker Param:', linkerParam);
-          const redirectUrl = 'https://outletls2.com' + (linkerParam ? '?' + linkerParam : '');
+          const redirectUrl = 'https://outletls2.com';
           window.location.href = redirectUrl;
         } else {
           console.log('No trackers available yet. Retrying...');

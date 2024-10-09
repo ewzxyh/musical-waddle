@@ -128,7 +128,7 @@ const Form: React.FC = () => {
           </Button>
           {/* Aviso */}
           <p className="text-white text-center text-sm mt-4">
-            Promoção válida até 20/10 ou<br />enquanto durarem os estoques.
+            Promoção válida até 20/10 ou<br/>enquanto durarem os estoques.
           </p>
         </form>
       </div>
