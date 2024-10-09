@@ -75,39 +75,44 @@ export default function PreBlackFridayPage() {
 
   return (
     <>
+
       {/* Load analytics.js */}
       <Script
         async
         src="https://www.google-analytics.com/analytics.js"
         strategy="beforeInteractive"
       />
+
       {/* Initialize analytics.js and enable the linker plugin */}
       <Script id="analytics-init" strategy="afterInteractive">
         {`
-          ga('create', 'AW-16733205759', 'auto');
-          ga('require', 'linker');
-          ga('linker:autoLink', ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com', 'outletls2.com']);
-        `}
+    ga('create', 'AW-16733205759', 'auto');
+    ga('require', 'linker');
+    ga('linker:autoLink', ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com', 'outletls2.com']);
+  `}
       </Script>
+
       {/* Load gtag.js */}
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=AW-16733205759"
         strategy="afterInteractive"
       />
+
       {/* Configure gtag.js */}
       <Script id="gtag-config" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-16733205759', {
-            'linker': {
-              'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com', 'outletls2.com']
-            }
-          });
-        `}
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-16733205759', {
+      'linker': {
+        'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com', 'outletls2.com']
+      }
+    });
+  `}
       </Script>
+
       <div className="flex justify-center items-center h-screen bg-[#1b1b1b]">
         <div className="bg-[#fd1a1a] p-8 text-center rounded-3xl">
           <h1 className="text-[2em]">Outlet - Pré Black Friday</h1>

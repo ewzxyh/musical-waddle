@@ -27,8 +27,34 @@ declare global {
 
 export default function Home() {
   useEffect(() => {
-    // ... (your existing useEffect code)
+    const redirectAfterCountdown = () => {
+      if (typeof window !== 'undefined' && window.ga) {
+        const trackers = window.ga.getAll();
+        if (trackers && trackers.length > 0) {
+          const linkerParam = trackers[0].get('linkerParam');
+          console.log('Linker Param:', linkerParam);
+          const redirectUrl = 'https://outletls2.com' + (linkerParam ? '?' + linkerParam : '');
+          window.location.href = redirectUrl;
+        } else {
+          console.log('No trackers available yet. Retrying...');
+          setTimeout(redirectAfterCountdown, 100); // Retry after 100ms
+        }
+      } else {
+        console.log('window.ga is not defined. Retrying...');
+        setTimeout(redirectAfterCountdown, 100); // Retry after 100ms
+      }
+    };
+  
+    const redirectTimer = setTimeout(() => {
+      redirectAfterCountdown();
+    }, 10000);
+  
+    return () => {
+      clearTimeout(redirectTimer);
+    };
   }, []);
+  
+  
 
   return (
     <PageWrapper>

@@ -36,24 +36,30 @@ const Form: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (emailValido) {
-      if (typeof window !== 'undefined' && window.ga) {
-        const trackers = window.ga.getAll();
-        if (trackers && trackers.length > 0) {
-          const linkerParam = trackers[0].get('linkerParam');
-          const redirectUrl = 'https://pre-blackfriday.linhasuper2.com' + (linkerParam ? '?' + linkerParam : '');
-          window.location.href = redirectUrl;
+      const checkTrackerAndRedirect = () => {
+        if (typeof window !== 'undefined' && window.ga) {
+          const trackers = window.ga.getAll();
+          if (trackers && trackers.length > 0) {
+            const linkerParam = trackers[0].get('linkerParam');
+            console.log('Linker Param:', linkerParam);
+            const redirectUrl = 'https://pre-blackfriday.linhasuper2.com' + (linkerParam ? '?' + linkerParam : '');
+            window.location.href = redirectUrl;
+          } else {
+            console.log('No trackers available yet. Retrying...');
+            setTimeout(checkTrackerAndRedirect, 100); // Retry after 100ms
+          }
         } else {
-          // Fallback if no trackers are available
-          window.location.href = 'https://pre-blackfriday.linhasuper2.com';
+          console.log('window.ga is not defined. Retrying...');
+          setTimeout(checkTrackerAndRedirect, 100); // Retry after 100ms
         }
-      } else {
-        // Fallback if ga is not available
-        window.location.href = 'https://pre-blackfriday.linhasuper2.com';
-      }
+      };
+  
+      checkTrackerAndRedirect();
     } else {
       alert('Por favor, insira um e-mail válido.');
     }
   };
+  
 
   return (
     isModalVisible && (
