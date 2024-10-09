@@ -2,6 +2,7 @@
 
 import { useEffect, useState, Fragment } from 'react';
 import { useRouter } from 'next/navigation';
+import Script from "next/script";
 
 export default function PreBlackFridayPage() {
   const router = useRouter();
@@ -49,13 +50,31 @@ export default function PreBlackFridayPage() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center h-screen bg-[#1b1b1b]">
-      <div className="bg-[#fd1a1a] p-8 text-center rounded-3xl">
-        <h1 className='text-[2em]'>Outlet - Pré Black Friday</h1>
-        <div className='text-lg pt-4'>Você está na <Fragment><strong>FILA</strong></Fragment> para participar, você será redirecionado em grupo em: <Fragment><strong>{countdown}</strong></Fragment> segundos...</div>
-        <div className='pt-4 text-lg'><strong>Somente até 20/10/2024:</strong> {eventCountdown}<br></br>ou enquanto o estoque durar.</div>
-        <div className='pt-4 text-lg'>Número de pessoas na fila: <strong>{queueNumber}</strong></div>
+    <>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-16733205759"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('set', 'linker', {
+          'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com']
+          });
+          gtag('js', new Date());
+          gtag('config', 'AW-16733205759');
+        `}
+      </Script>
+      <div className="flex justify-center items-center h-screen bg-[#1b1b1b]">
+        <div className="bg-[#fd1a1a] p-8 text-center rounded-3xl">
+          <h1 className='text-[2em]'>Outlet - Pré Black Friday</h1>
+          <div className='text-lg pt-4'>Você está na <Fragment><strong>FILA</strong></Fragment> para participar, você será redirecionado em grupo em: <Fragment><strong>{countdown}</strong></Fragment> segundos...</div>
+          <div className='pt-4 text-lg'><strong>Somente até 20/10/2024:</strong> {eventCountdown}<br></br>ou enquanto o estoque durar.</div>
+          <div className='pt-4 text-lg'>Número de pessoas na fila: <strong>{queueNumber}</strong></div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -40,18 +40,20 @@ export default function Home() {
 
   return (
     <PageWrapper>
-
       <Script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=AW-976063044"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-16733205759"
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+           gtag('set', 'linker', {
+          'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com']
+          });
           gtag('js', new Date());
-          gtag('config', 'AW-976063044');
+          gtag('config', 'AW-16733205759');
         `}
       </Script>
       <Form />
