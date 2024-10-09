@@ -1,17 +1,16 @@
 "use client";
 
+import { useEffect, useState } from 'react';
+import Script from "next/script";
+
+// Extend the Window interface
 declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
   }
 }
 
-import { useEffect, useState, Fragment } from 'react';
-import { useRouter } from 'next/navigation';
-import Script from "next/script";
-
 export default function PreBlackFridayPage() {
-  const router = useRouter();
   const [countdown, setCountdown] = useState(10);
   const [eventCountdown, setEventCountdown] = useState('');
   const [queueNumber, setQueueNumber] = useState(0);
