@@ -17,42 +17,50 @@ import ProtectImages from '@/components/LandingPage/ProtectImages';
 import { useEffect } from 'react';
 import Card from '@/components/LandingPage/Button';
 
+// Extend the Window interface
+declare global {
+  interface Window {
+    dataLayer?: any[];
+    ga?: any;
+  }
+}
+
 export default function Home() {
   useEffect(() => {
-    const handleContextMenu = (e: { preventDefault: () => void }) => {
-      e.preventDefault();
-    };
-
-    const handleKeyDown = (e: { ctrlKey: any; key: string; preventDefault: () => void }) => {
-      if (e.ctrlKey && (e.key === 'c' || e.key === 's' || e.key === 'u')) {
-        e.preventDefault();
-      }
-    };
-
-    document.addEventListener('contextmenu', handleContextMenu);
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('contextmenu', handleContextMenu);
-      document.removeEventListener('keydown', handleKeyDown);
-    };
+    // ... (your existing useEffect code)
   }, []);
 
   return (
     <PageWrapper>
+      {/* Load analytics.js */}
+      <Script
+        async
+        src="https://www.google-analytics.com/analytics.js"
+        strategy="beforeInteractive"
+      />
+      {/* Initialize analytics.js and enable the linker plugin */}
+      <Script id="analytics-init" strategy="afterInteractive">
+        {`
+          ga('create', 'AW-16733205759', 'auto');
+          ga('require', 'linker');
+          ga('linker:autoLink', ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com', 'outletls2.com']);
+        `}
+      </Script>
+      {/* Load gtag.js */}
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=AW-16733205759"
         strategy="afterInteractive"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      {/* Configure gtag.js */}
+      <Script id="gtag-config" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'AW-16733205759', {
             'linker': {
-              'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com']
+              'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com', 'outletls2.com']
             }
           });
         `}

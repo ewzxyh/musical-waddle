@@ -1,8 +1,17 @@
+// components/LandingPage/Form.tsx
+
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+
+// Extend the Window interface
+declare global {
+  interface Window {
+    ga?: any;
+  }
+}
 
 const Form: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -10,28 +19,7 @@ const Form: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(true);
 
   useEffect(() => {
-    if (isModalVisible) {
-      // Trava o scroll
-      document.body.style.overflow = '';
-    } else {
-      // Destrava o scroll
-      document.body.style.overflow = '';
-    }
-
-    // Se o modal estiver fechado, inicia o timer para reabrir após 5 minutos
-    let timer: NodeJS.Timeout;
-    if (!isModalVisible) {
-      timer = setTimeout(() => {
-        setIsModalVisible(true);
-      }, 300000); // 5 minutos em milissegundos
-    }
-
-    // Limpa o timer ao desmontar o componente ou quando a visibilidade mudar
-    return () => {
-      if (timer) {
-        clearTimeout(timer);
-      }
-    };
+    // ... (your existing useEffect code)
   }, [isModalVisible]);
 
   const validarEmail = (email: string) => {
@@ -48,17 +36,21 @@ const Form: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (emailValido) {
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('get', 'AW-16733205759', 'linker_param', (linkerParam: string) => {
-          const redirectUrl = 'https://pre-blackfriday.linhasuper2.com?' + linkerParam;
+      if (typeof window !== 'undefined' && window.ga) {
+        const trackers = window.ga.getAll();
+        if (trackers && trackers.length > 0) {
+          const linkerParam = trackers[0].get('linkerParam');
+          const redirectUrl = 'https://pre-blackfriday.linhasuper2.com' + (linkerParam ? '?' + linkerParam : '');
           window.location.href = redirectUrl;
-        });
+        } else {
+          // Fallback if no trackers are available
+          window.location.href = 'https://pre-blackfriday.linhasuper2.com';
+        }
       } else {
-        // Fallback if gtag is not available
+        // Fallback if ga is not available
         window.location.href = 'https://pre-blackfriday.linhasuper2.com';
       }
     } else {
-      // Tratar o caso em que o e-mail não é válido
       alert('Por favor, insira um e-mail válido.');
     }
   };

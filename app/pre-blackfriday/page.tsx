@@ -1,12 +1,14 @@
-"use client";
+// app/pre-blackfriday/page.tsx
 
+"use client";
 import { useEffect, useState } from 'react';
 import Script from "next/script";
 
 // Extend the Window interface
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+    dataLayer?: any[];
+    ga?: any;
   }
 }
 
@@ -21,13 +23,18 @@ export default function PreBlackFridayPage() {
     }, 1000);
 
     const redirectTimer = setTimeout(() => {
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('get', 'AW-16733205759', 'linker_param', (linkerParam: string) => {
-          const redirectUrl = 'https://outletls2.com?' + linkerParam;
+      if (typeof window !== 'undefined' && window.ga) {
+        const trackers = window.ga.getAll();
+        if (trackers && trackers.length > 0) {
+          const linkerParam = trackers[0].get('linkerParam');
+          const redirectUrl = 'https://outletls2.com' + (linkerParam ? '?' + linkerParam : '');
           window.location.href = redirectUrl;
-        });
+        } else {
+          // Fallback if no trackers are available
+          window.location.href = 'https://outletls2.com';
+        }
       } else {
-        // Fallback if gtag is not available
+        // Fallback if ga is not available
         window.location.href = 'https://outletls2.com';
       }
     }, 10000);
@@ -68,19 +75,35 @@ export default function PreBlackFridayPage() {
 
   return (
     <>
+      {/* Load analytics.js */}
+      <Script
+        async
+        src="https://www.google-analytics.com/analytics.js"
+        strategy="beforeInteractive"
+      />
+      {/* Initialize analytics.js and enable the linker plugin */}
+      <Script id="analytics-init" strategy="afterInteractive">
+        {`
+          ga('create', 'AW-16733205759', 'auto');
+          ga('require', 'linker');
+          ga('linker:autoLink', ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com', 'outletls2.com']);
+        `}
+      </Script>
+      {/* Load gtag.js */}
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=AW-16733205759"
         strategy="afterInteractive"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      {/* Configure gtag.js */}
+      <Script id="gtag-config" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'AW-16733205759', {
             'linker': {
-              'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com']
+              'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com', 'outletls2.com']
             }
           });
         `}
