@@ -28,12 +28,12 @@ const Form: React.FC = () => {
       document.body.style.overflow = '';
     }
 
-    // Se o modal estiver fechado, inicia o timer para reabrir após 5 minutos
+    // Se o modal estiver fechado, inicia o timer para reabrir após 3 segundos
     let timer: NodeJS.Timeout;
     if (!isModalVisible) {
       timer = setTimeout(() => {
-        setIsModalVisible(true);
-      }, 300000); // 5 minutos em milissegundos
+      setIsModalVisible(true);
+      }, 3000); // 3 segundos em milissegundos
     }
 
     // Limpa o timer ao desmontar o componente ou quando a visibilidade mudar
