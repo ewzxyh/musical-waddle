@@ -33,7 +33,7 @@ const Form: React.FC = () => {
     if (!isModalVisible) {
       timer = setTimeout(() => {
       setIsModalVisible(true);
-      }, 3000); // 3 segundos em milissegundos
+      }, 1500); // 1,5 segundos em milissegundos
     }
 
     // Limpa o timer ao desmontar o componente ou quando a visibilidade mudar
