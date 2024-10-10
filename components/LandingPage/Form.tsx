@@ -100,7 +100,7 @@ const Form: React.FC = () => {
           </h2>
           {/* Subtítulo */}
           <p className="text-white text-center text-lg mb-4">
-            Inscreva-se e seja redirecionado para nosso <strong>Outlet Pré Black Friday!</strong>
+            Inscreva-se e seja REDIRECIONADO para nosso <strong>Outlet Pré Black Friday!</strong>
           </p>
           {/* Linha divisória */}
           <hr className="border-a border-white mb-4" />
@@ -127,13 +127,13 @@ const Form: React.FC = () => {
           <div className="flex items-center mb-4">
             <Checkbox id="confirm" checked={isChecked} onCheckedChange={(checked) => setIsChecked(checked === true)} />
             <label htmlFor="confirm" className="ml-2 text-white">
-              Eu confirmo que li e aceito os termos
+              Eu confirmo que li e aceito os termos e em ser redirecionado para a loja.
             </label>
           </div>
           {/* Mensagem de orientação */}
           {!emailValido && (
             <p className="text-white text-base mb-4 text-center">
-              Entre na FILA e visite nossa nova página
+              Entre na FILA para ser redirecionado e visitar nossa nova página.
             </p>
           )}
           {/* Botão enviar */}
