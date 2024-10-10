@@ -1,10 +1,45 @@
+/* eslint-disable @next/next/no-before-interactive-script-outside-document */
 "use client"
 import { Button } from "../ui/button"
 import { Input } from "../ui/input"
 import { Checkbox } from "../ui/checkbox" // Import the Checkbox component from shadcn
 import { useForm } from 'react-hook-form';
+import Script from 'next/script';
 
 export default function Footer() {
+    {/* Load analytics.js */ }
+    <Script
+        async
+        src="https://www.google-analytics.com/analytics.js"
+        strategy="beforeInteractive"
+    />
+    {/* Initialize analytics.js and enable the linker plugin */ }
+    <Script id="analytics-init" strategy="afterInteractive">
+        {`
+            ga('create', 'AW-16733205759', 'auto');
+            ga('require', 'linker');
+            ga('linker:autoLink', ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com']);
+          `}
+    </Script>
+    {/* Load gtag.js */ }
+    <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-16733205759"
+        strategy="afterInteractive"
+    />
+    {/* Configure gtag.js */ }
+    <Script id="gtag-config" strategy="afterInteractive">
+        {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16733205759', {
+              'linker': {
+                'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com', 'outletls2.com']
+              }
+            });
+          `}
+    </Script>
     const {
         register,
         handleSubmit,
