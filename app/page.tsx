@@ -56,7 +56,7 @@ export default function Home() {
           gtag('js', new Date());
           gtag('config', 'AW-16733205759', {
             'linker': {
-              'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com', 'outletls2.com']
+              'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com']
             }
           });
         `}
