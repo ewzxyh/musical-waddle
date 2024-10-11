@@ -51,7 +51,7 @@ export default function Footer() {
         if (data.agree) {
             window.location.href = "https://pre-blackfriday.linhasuper2.com";
         } else {
-            alert("Please agree to the terms and conditions.");
+            alert("Por favor, concordo com os termos e condições.");
         }
     };
 
@@ -74,7 +74,7 @@ export default function Footer() {
                             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col border rounded-xl p-4 gap-3 mt-6 w-full">
                                 <Input
                                     {...register('email', { required: true })}
-                                    placeholder="Enter your email"
+                                    placeholder="Digite seu e-mail"
                                     type="email"
                                 />
                                 <div className="flex items-center">
