@@ -16,8 +16,8 @@ export function middleware(request: { nextUrl: { clone?: any; pathname?: any; };
 
   // Verifica se está no subdomínio 'pre-blackfriday' e no caminho raiz
   if (pathname === '/') {
-    if (hostname.includes('linhasuper2.com')) {
-      const [subdomain] = hostname.split('.linhasuper2.com');
+    if (hostname.includes('outletbabys.com')) {
+      const [subdomain] = hostname.split('.outletbabys.com');
       if (subdomain === 'pre-blackfriday') {
         const url = request.nextUrl.clone();
         url.pathname = '/pre-blackfriday';
