@@ -62,7 +62,7 @@ export default function PreBlackFridayPage() {
   return (
     <div className="flex justify-center items-center h-screen bg-[#ffffff]">
       <div className="bg-[#006eff] p-8 text-center rounded-3xl">
-        <h1 className="text-[2em]">Outlet Babys - Pré Black Friday</h1>
+        <h1 className="text-[2em]">Outlet - Pré Black Friday</h1>
         <div className="text-lg pt-4">
           Você está na <strong>FILA</strong> para participar, você será
           redirecionado em grupo em: <strong>{countdown}</strong> segundos...
