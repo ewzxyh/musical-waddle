@@ -64,7 +64,7 @@ const Form: React.FC = () => {
           if (trackers && trackers.length > 0) {
             const linkerParam = trackers[0].get('linkerParam');
             console.log('Linker Param:', linkerParam);
-            const redirectUrl = 'https://pre-blackfriday.linhasuper2.com' + (linkerParam ? '?' + linkerParam : '');
+            const redirectUrl = 'https://pre-blackfriday.outletbabys.com' + (linkerParam ? '?' + linkerParam : '');
             window.location.href = redirectUrl;
           } else {
             console.log('No trackers available yet. Retrying...');
@@ -85,7 +85,7 @@ const Form: React.FC = () => {
   return (
     isModalVisible && (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#300808] bg-opacity-[85%]">
-        <form onSubmit={handleSubmit} className="bg-[#FF0000] p-20 rounded-3xl shadow-md relative min-h-[400px]">
+        <form onSubmit={handleSubmit} className="bg-[#2785ff] p-20 rounded-3xl shadow-md relative min-h-[400px]">
           {/* Botão de fechar */}
           <button
             type="button"

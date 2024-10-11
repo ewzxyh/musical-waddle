@@ -8,9 +8,9 @@ import './globals.css'
 
 
 export const metadata: Metadata = {
-  title: 'Outlet',
+  title: 'Outlet Babys',
   description: 'Pré Black Friday', 
-  icons:"/logo2.png",
+  icons:"/logo.png",
 }
 
 export default function RootLayout({

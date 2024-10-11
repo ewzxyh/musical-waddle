@@ -22,7 +22,7 @@ export default function PreBlackFridayPage() {
     }, 1000); // 1 second
 
     const redirectTimer = setTimeout(() => {
-      window.location.href = 'https://outletls2.com';
+      window.location.href = 'https://outletbabys.com';
     }, 10000); // 10 seconds
 
     return () => {
@@ -60,9 +60,9 @@ export default function PreBlackFridayPage() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center h-screen bg-[#1b1b1b]">
-      <div className="bg-[#fd1a1a] p-8 text-center rounded-3xl">
-        <h1 className="text-[2em]">Outlet - Pré Black Friday</h1>
+    <div className="flex justify-center items-center h-screen bg-[#ffffff]">
+      <div className="bg-[#006eff] p-8 text-center rounded-3xl">
+        <h1 className="text-[2em]">Outlet Babys - Pré Black Friday</h1>
         <div className="text-lg pt-4">
           Você está na <strong>FILA</strong> para participar, você será
           redirecionado em grupo em: <strong>{countdown}</strong> segundos...

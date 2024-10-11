@@ -8,9 +8,9 @@ interface RootLayoutProps {
 }
 
 export const metadata: Metadata = {
-  title: 'Outlet',
-  description: 'Redirecionamento', 
-  icons:"/logo2.png",
+  title: 'Outlet Babys',
+  description: 'Redirecionamento Outlet', 
+  icons:"/logo.png",
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -18,7 +18,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="pt-BR">
       <head>
         <meta charSet="UTF-8" />
-        <title>Outlet</title>
+        <title>Outlet Babys</title>
       </head>
       <body>{children}</body>
     </html>

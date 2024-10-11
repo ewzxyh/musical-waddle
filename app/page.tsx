@@ -37,15 +37,15 @@ export default function Home() {
       {/* Initialize analytics.js and enable the linker plugin */}
       <Script id="analytics-init" strategy="afterInteractive">
         {`
-          ga('create', 'AW-16733205759', 'auto');
+          ga('create', 'AW-16736130586', 'auto');
           ga('require', 'linker');
-          ga('linker:autoLink', ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com']);
+          ga('linker:autoLink', ['outletbabys.com', 'pre-blackfriday.outletbabys.com']);
         `}
       </Script>
       {/* Load gtag.js */}
       <Script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=AW-16733205759"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-16736130586"
         strategy="afterInteractive"
       />
       {/* Configure gtag.js */}
@@ -54,9 +54,9 @@ export default function Home() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'AW-16733205759', {
+          gtag('config', 'AW-16736130586', {
             'linker': {
-              'domains': ['linhasuper2.com', 'pre-blackfriday.linhasuper2.com', 'outletls2.com']
+              'domains': ['outletbabys.com', 'pre-blackfriday.outletbabys.com']
             }
           });
         `}
@@ -83,26 +83,10 @@ export default function Home() {
         desktopImageUrl="/banner5.png"
         mobileImageUrl="/banner5-mobile.png"
       />
+      <Card></Card>
       <Banner6
         desktopImageUrl="/banner6.png"
         mobileImageUrl="/banner6-mobile.png"
-      />
-      <Card></Card>
-      <Banner7
-        desktopImageUrl="/banner7.png"
-        mobileImageUrl="/banner7-mobile.png"
-      />
-      <Banner8
-        desktopImageUrl="/banner8.png"
-        mobileImageUrl="/banner8-mobile.png"
-      />
-      <Banner9
-        desktopImageUrl="/banner9.png"
-        mobileImageUrl="/banner9-mobile.png"
-      />
-      <Banner10
-        desktopImageUrl="/banner10.png"
-        mobileImageUrl="/banner10-mobile.png"
       />
     </PageWrapper>
   );
