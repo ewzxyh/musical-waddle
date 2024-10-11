@@ -84,7 +84,7 @@ const Form: React.FC = () => {
 
   return (
     isModalVisible && (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#300808] bg-opacity-[85%]">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#2079ff] bg-opacity-[35%]">
         <form onSubmit={handleSubmit} className="bg-[#2785ff] p-20 rounded-3xl shadow-md relative min-h-[400px]">
           {/* Botão de fechar */}
           <button
@@ -143,7 +143,7 @@ const Form: React.FC = () => {
             className="
                 w-full
                 bg-[#000]
-                hover:bg-[#3f0000]
+                hover:bg-[#293ca7]
                 disabled:bg-gray-400
                 text-base
                 text-white
