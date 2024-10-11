@@ -22,7 +22,7 @@ export default function PreBlackFridayPage() {
     }, 1000); // 1 second
 
     const redirectTimer = setTimeout(() => {
-      window.location.href = 'https://outletbabys.com';
+      window.location.href = 'https://cartersbabys.com';
     }, 10000); // 10 seconds
 
     return () => {
