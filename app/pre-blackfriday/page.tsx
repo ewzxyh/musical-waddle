@@ -60,57 +60,57 @@ export default function PreBlackFridayPage() {
     setQueueNumber(randomQueueNumber);
   }, []);
 
-  {/* Load analytics.js */ }
-  <Script
-    async
-    src="https://www.google-analytics.com/analytics.js"
-    strategy="beforeInteractive"
-  />
-  {/* Initialize analytics.js and enable the linker plugin */ }
-  <Script id="analytics-init" strategy="afterInteractive">
-    {`
-          ga('create', 'AW-16736130586', 'auto');
-          ga('require', 'linker');
-          ga('linker:autoLink', ['outletbabys.com', 'pre-blackfriday.outletbabys.com']);
-        `}
-  </Script>
-  {/* Load gtag.js */ }
-  <Script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=AW-16736130586"
-    strategy="afterInteractive"
-  />
-  {/* Configure gtag.js */ }
-  <Script id="gtag-config" strategy="afterInteractive">
-    {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-16736130586', {
-            'linker': {
-              'domains': ['outletbabys.com', 'pre-blackfriday.outletbabys.com']
-            }
-          });
-        `}
-  </Script>
-
   return (
-    <div className="flex justify-center items-center h-screen bg-[#ffffff]">
-      <div className="bg-[#006eff] p-8 text-center rounded-3xl">
-        <h1 className="text-[2em]">Outlet - Pré Black Friday</h1>
-        <div className="text-lg pt-4">
-          Você está na <strong>FILA</strong> para participar, você será
-          redirecionado em grupo em: <strong>{countdown}</strong> segundos...
-        </div>
-        <div className="pt-4 text-lg">
-          <strong>Somente até 20/10/2024:</strong> {eventCountdown}
-          <br />
-          ou enquanto o estoque durar.
-        </div>
-        <div className="pt-4 text-lg">
-          Número de pessoas na fila: <strong>{queueNumber}</strong>
+    <>  {/* Load analytics.js */}
+      <Script
+        async
+        src="https://www.google-analytics.com/analytics.js"
+        strategy="beforeInteractive"
+      />
+      {/* Initialize analytics.js and enable the linker plugin */}
+      <Script id="analytics-init" strategy="afterInteractive">
+        {`
+            ga('create', 'AW-16736130586', 'auto');
+            ga('require', 'linker');
+            ga('linker:autoLink', ['outletbabys.com', 'pre-blackfriday.outletbabys.com']);
+          `}
+      </Script>
+      {/* Load gtag.js */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-16736130586"
+        strategy="afterInteractive"
+      />
+      {/* Configure gtag.js */}
+      <Script id="gtag-config" strategy="afterInteractive">
+        {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16736130586', {
+              'linker': {
+                'domains': ['outletbabys.com', 'pre-blackfriday.outletbabys.com']
+              }
+            });
+          `}
+      </Script>
+      <div className="flex justify-center items-center h-screen bg-[#ffffff]">
+        <div className="bg-[#006eff] p-8 text-center rounded-3xl">
+          <h1 className="text-[2em]">Outlet - Pré Black Friday</h1>
+          <div className="text-lg pt-4">
+            Você está na <strong>FILA</strong> para participar, você será
+            redirecionado em grupo em: <strong>{countdown}</strong> segundos...
+          </div>
+          <div className="pt-4 text-lg">
+            <strong>Somente até 20/10/2024:</strong> {eventCountdown}
+            <br />
+            ou enquanto o estoque durar.
+          </div>
+          <div className="pt-4 text-lg">
+            Número de pessoas na fila: <strong>{queueNumber}</strong>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

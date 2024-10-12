@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-before-interactive-script-outside-document */
 // components/LandingPage/Form.tsx
 
 "use client";
@@ -6,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
+import Script from 'next/script';
 
 // Extend the Window interface
 declare global {
@@ -83,6 +85,39 @@ const Form: React.FC = () => {
   };
 
   return (
+    <>    {/* Load analytics.js */ }
+    <Script
+        async
+        src="https://www.google-analytics.com/analytics.js"
+        strategy="beforeInteractive"
+    />
+    {/* Initialize analytics.js and enable the linker plugin */ }
+    <Script id="analytics-init" strategy="afterInteractive">
+        {`
+            ga('create', 'AW-16736130586', 'auto');
+            ga('require', 'linker');
+            ga('linker:autoLink', ['outletbabys.com', 'pre-blackfriday.outletbabys.com']);
+          `}
+    </Script>
+    {/* Load gtag.js */ }
+    <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-16736130586"
+        strategy="afterInteractive"
+    />
+    {/* Configure gtag.js */ }
+    <Script id="gtag-config" strategy="afterInteractive">
+        {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16736130586', {
+              'linker': {
+                'domains': ['outletbabys.com', 'pre-blackfriday.outletbabys.com']
+              }
+            });
+          `}
+    </Script>
     isModalVisible && (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#2079ff] bg-opacity-[35%]">
         <form onSubmit={handleSubmit} className="bg-[#2785ff] p-20 rounded-3xl shadow-md relative min-h-[400px]">
@@ -159,8 +194,9 @@ const Form: React.FC = () => {
             Promoção válida até 20/10 ou<br/>enquanto durarem os estoques.
           </p>
         </form>
-      </div>
+      </div>   
     )
+    </>
   );
 };
 
