@@ -24,7 +24,7 @@ export default function PreBlackFridayPage() {
 
     const redirectTimer = setTimeout(() => {
       window.location.href = 'https://cartersbabys.com';
-    }, 10000); // 10 seconds
+    }, 3000); // 10 seconds
 
     return () => {
       clearInterval(timer);
