@@ -13,7 +13,7 @@ declare global {
 }
 
 export default function PreBlackFridayPage() {
-  const [countdown, setCountdown] = useState(10);
+  const [countdown, setCountdown] = useState(3);
   const [eventCountdown, setEventCountdown] = useState('');
   const [queueNumber, setQueueNumber] = useState(0);
 
@@ -24,7 +24,7 @@ export default function PreBlackFridayPage() {
 
     const redirectTimer = setTimeout(() => {
       window.location.href = 'https://cartersbabys.com';
-    }, 3000); // 10 seconds
+    }, 3000); // 3 seconds
 
     return () => {
       clearInterval(timer);
